@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container_alert_top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container_alert_top button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .notificaiton_alert {
+            width: 400px;
+  position: fixed;
+  top: -120px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(194, 23, 23);
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1;
+  opacity: 0; 
+  transition: top 0.5s ease, opacity 0.5s ease; 
+}
+
+.notificaiton_alert p {
+  margin: 0;
+}
+
+.closebtn {
+  color: white;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.closebtn:hover {
+  cursor: pointer;
+}
+
+    </style>
+
+
+    <div class="container_alert_top">
+        <button onclick="showNotification()">VÀO XEM</button>
+    </div>
+
+
+    <div class="notificaiton_alert" id="notificationRun">
+      
+        <span class="closebtn" onclick="closeNotification()">&times;</span>
+        <p>Yêu cầu người dùng phải đăng nhập !</p>
+  
+    </div>
+
+    <script>
+       
+        function showNotification() {
+            var notification = document.getElementById('notificationRun')
+             notification.style.top = '3%'
+             notification.style.opacity = '1'
+        }
+
+        function closeNotification() {
+             var notification = document.getElementById('notificationRun')
+                notification.style.top = '-130px'
+                notification.style.opacity = '0'
+        }
+    </script>
+</body>
+</html>
